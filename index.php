@@ -1,7 +1,7 @@
 <?php
 
 if($_COOKIE['token']) {
-    header("Location: /feedback.html");
+    header("Location: templates/feedback.html");
 }else {
-    header("Location: /auth.html");
+    header("Location: templates/auth.html");
 }

@@ -1,10 +1,16 @@
 <?php
+require_once("Application.php");
 
-if($_POST['signin']){
-    //auth
-} elseif($_POST['signup']) {
-    //reg
-}elseif ($_POST['feedback']){
+$app = new Application();
+
+if (isset($_POST['signin'])) {
+    echo($app->loginUser($_POST['email'], $_POST['password']));
+} elseif (isset($_POST['signup'])) {
+    echo($app->registrationUser($_POST['email'], $_POST['password']));
+} elseif (isset($_POST['feedback'])) {
     //feedback
 }
-print_r($_POST);
+else {
+    echo 404;
+}
+//print_r($_POST);
