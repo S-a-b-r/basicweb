@@ -11,6 +11,12 @@ class User
         $this->secretCode = "123qwe123";
     }
 
+    public function logOutUser(){
+        $this->cookie->deleteTokenInCookie();
+        header("Location: ..");
+    }
+
+
     public function registrationUser($email, $password)
     {
         $userId = $this->db->userIdentification($email);

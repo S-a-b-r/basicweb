@@ -8,9 +8,10 @@ if (isset($_POST['signin'])) {
 } elseif (isset($_POST['signup'])) {
     echo($app->registrationUser($_POST['email'], $_POST['password']));
 } elseif (isset($_POST['feedback'])) {
-    //feedback
+    echo($app->addFeedback($_POST));
+} elseif(isset($_POST['logout'])) {
+    echo($app->logOutUser());
 }
 else {
     echo 404;
 }
-//print_r($_POST);
